@@ -4,16 +4,16 @@ import java.util.Vector;
 
 public class Funcionario extends Pessoa {
 	
-	private double salario;
+	private int salario;
 	private String cargo;
-	private Gerente gerente;
-	private Departamento departamento;
+	private String gerente;
+	private String departamento;
 	
 	// CONSTRUTOR:
-	public Funcionario(String cPF, String nome, String email, Imagem foto,
-			Endereco endereco, Vector<String> telefones, int salario,
-			String cargo, Gerente gerente, Departamento departamento) {
-		super(cPF, nome, email, foto, endereco, telefones);
+	public Funcionario(String cpf, String nome, String email, Imagem foto,
+			Endereco endereco, int salario,
+			String cargo, String gerente, String departamento) {
+		super(cpf, nome, email, foto, endereco);
 		this.salario = salario;
 		this.cargo = cargo;
 		this.gerente = gerente;
@@ -37,19 +37,19 @@ public class Funcionario extends Pessoa {
 		this.cargo = cargo;
 	}
 
-	public Gerente getGerente() {
+	public String getGerente() {
 		return gerente;
 	}
 
-	public void setGerente(Gerente gerente) {
+	public void setGerente(String gerente) {
 		this.gerente = gerente;
 	}
 
-	public Departamento getDepartamento() {
+	public String getDepartamento() {
 		return departamento;
 	}
 
-	public void setDepartamento(Departamento departamento) {
+	public void setDepartamento(String departamento) {
 		this.departamento = departamento;
 	}
 	
