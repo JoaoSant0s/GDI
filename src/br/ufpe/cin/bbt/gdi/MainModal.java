@@ -25,7 +25,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.InputEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Background;
+//import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -112,6 +112,10 @@ public class MainModal extends Application{
 	
 	final Label lblEnderecoComplementoFuncionario = new Label("Complemento");
 	final TextField dialogoEnderecoComplementoFuncionario = new TextField();	
+	
+	 public static void main(String[] args) {
+	        launch(args);
+	    }
 	
 
 	@SuppressWarnings("unchecked")
