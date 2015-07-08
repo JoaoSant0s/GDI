@@ -14,8 +14,10 @@ public class DBController {
 	private Connection connection;
 	
 	public void createConnection() throws SQLException, ClassNotFoundException {
-		Class.forName(" oracle.jdbc.driver.OracleDriver");
-		this.connection = DriverManager.getConnection(this.toString(), this.user, this.password);
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		String connectionURL = this.toString();
+		this.connection = DriverManager.getConnection(connectionURL, this.user, this.password);
 	}
 	
 	public void closeConnection() throws SQLException {
@@ -23,7 +25,7 @@ public class DBController {
 	}
 	
 	public String toString() {
-		return "jdbc:oracle:thin:@:" + this.ipServer + this.portServer + this.nameBD;
+		return "jdbc:oracle:thin:@" + this.ipServer + ":" + this.portServer + ":" + this.nameBD;
 	}
 	
 	public Connection getConnection() {
