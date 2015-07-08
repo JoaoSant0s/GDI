@@ -36,7 +36,10 @@ import javafx.stage.Stage;
 
 
 
-public class MainModal extends Application{
+public class MainModal extends Application {
+	private RepositorioCliente clientes;
+	private RepositorioFuncionario funcionarios;
+	
 	final Label lblNomeCliente = new Label("Nome do Cliente");
 	final TextField dialogoNomeCliente = new TextField();
 	
@@ -121,11 +124,12 @@ public class MainModal extends Application{
 	@SuppressWarnings("unchecked")
 	@Override
 	public void start(Stage stage) throws Exception {
-		/*DBController controller = new DBController();
+		DBController controller = new DBController();
 		controller.createConnection();
-		RepositorioCliente repoCliente = new RepositorioCliente(controller.getConnection());
-		RepositorioFuncionario repoFuncionario = new RepositorioFuncionario(controller.getConnection());
-		*/
+		
+		this.clientes = new RepositorioCliente(controller.getConnection());
+		this.funcionarios = new RepositorioFuncionario(controller.getConnection());
+		
 			Button btnCliente = new Button("Cadastrar Cliente");
 			Button btnFuncionario = new Button("Cadastrar Funcionário");
 			Button btnInvestidor = new Button("Cadastrar Investidor");
