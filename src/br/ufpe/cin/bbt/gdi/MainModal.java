@@ -27,7 +27,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.InputEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Background;
+//import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -38,8 +38,11 @@ import javafx.stage.Stage;
 
 
 
-public class MainModal extends Application{
-	//Campos para cadastro do Cliente
+
+public class MainModal extends Application {
+	private RepositorioCliente clientes;
+	private RepositorioFuncionario funcionarios;
+	
 	final Label lblNomeCliente = new Label("Nome do Cliente");
 	final TextField dialogoNomeCliente = new TextField();
 	
@@ -135,37 +138,38 @@ public class MainModal extends Application{
 	final TextField dialogoEnderecoComplementoFuncionario = new TextField();	
 	
 	//Dados para mostragem na busca Funcionario
-		final Label lblBuscaNomeFuncionario = new Label("Busca por Nome");
-		final TextField dialogoBuscaNomeFuncionario = new TextField();	
-		
-		final Label lblDadosNomeFuncionario = new Label();
-		final Label lblDadosCPFFuncionario= new Label();
-		final Label lblDadosEmailFuncionario = new Label();
-		final ImageView imageFuncionario = new ImageView();
-		final Label lblDadosTipoEmpregoFuncionario = new Label();
-		
-		final Label lblDadosEnderecoEstadoFuncionario = new Label();
-		final Label lblDadosEnderecoCidadeFuncionario = new Label();
-		final Label lblDadosEnderecoBairroFuncionario = new Label();
-		final Label lblDadosEnderecoRuaFuncionario = new Label();
-		final Label lblDadosEnderecoNumeroFuncionario = new Label();
-		final Label lblDadosEnderecoComplementoFuncionario = new Label();
+	final Label lblBuscaNomeFuncionario = new Label("Busca por Nome");
+	final TextField dialogoBuscaNomeFuncionario = new TextField();	
+	
+	final Label lblDadosNomeFuncionario = new Label();
+	final Label lblDadosCPFFuncionario= new Label();
+	final Label lblDadosEmailFuncionario = new Label();
+	final ImageView imageFuncionario = new ImageView();
+	final Label lblDadosTipoEmpregoFuncionario = new Label();
+	
+	final Label lblDadosEnderecoEstadoFuncionario = new Label();
+	final Label lblDadosEnderecoCidadeFuncionario = new Label();
+	final Label lblDadosEnderecoBairroFuncionario = new Label();
+	final Label lblDadosEnderecoRuaFuncionario = new Label();
+	final Label lblDadosEnderecoNumeroFuncionario = new Label();
+	final Label lblDadosEnderecoComplementoFuncionario = new Label();
 	
 	//Botoes para cadastros gerais
 	final Button btnCliente = new Button("Cadastrar Cliente");
 	final Button btnFuncionario = new Button("Cadastrar Funcionário");
 	final Button btnInvestidor = new Button("Cadastrar Investidor");
+	 public static void main(String[] args) {
+	        launch(args);
+	    }
 	
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public void start(Stage stage) throws Exception {
-		/*DBController controller = new DBController();
+		DBController controller = new DBController();
 		controller.createConnection();
-		final RepositorioCliente repoCliente = new RepositorioCliente(controller.getConnection());
-		RepositorioFuncionario repoFuncionario = new RepositorioFuncionario(controller.getConnection());*/
-		
-			
+		this.clientes = new RepositorioCliente(controller.getConnection());
+		this.funcionarios = new RepositorioFuncionario(controller.getConnection());
 						
 		 EventHandler<MouseEvent> filter1 = new EventHandler<MouseEvent>() {
 	            @Override
